@@ -23,6 +23,27 @@ android {
     }
 }
 
+task('mockStart', type: Exec){
+    doFirst {
+        println "MOCK: Start server ..."
+    }
+    executable "../../scripts/_mock.sh"
+    args '-a', 'start', '-p', "${projectDir}/../../", '-m', 'deps/mock-config'
+}
+
+task('mockStop', type: Exec){
+    doFirst {
+        println "MOCK: Stop Server ..."
+    }
+    executable "../../scripts/_mock.sh"
+    args '-a', 'stop', '-p', "${projectDir}/../../", '-m', 'deps/mock-config'
+}
+
+gradle.projectsEvaluated {
+    connectedDebugAndroidTest.dependsOn mockStart
+    connectedDebugAndroidTest.finalizedBy mockStop
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {

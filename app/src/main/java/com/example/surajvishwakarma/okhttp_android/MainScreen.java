@@ -29,12 +29,12 @@ public class MainScreen extends AppCompatActivity {
                 getMethod("http://api.drivewealth.io/v1/countries");
             }
         }).start();*/
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                postMethod("http://api.drivewealth.io/v1/signups/live");
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                postMethod("http://api.drivewealth.io/v1/signups/live");
+//            }
+//        }).start();
     }
 
     public MediaType getJsonMedia() {
