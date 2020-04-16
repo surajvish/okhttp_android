@@ -23,21 +23,21 @@ android {
     }
 }
 
-task('mockStart', type: Exec){
-    doFirst {
-        println "MOCK: Start server ..."
-    }
-    executable "../../scripts/_mock.sh"
-    args '-a', 'start', '-p', "${projectDir}/../../", '-m', 'deps/mock-config'
-}
-
-task('mockStop', type: Exec){
-    doFirst {
-        println "MOCK: Stop Server ..."
-    }
-    executable "../../scripts/_mock.sh"
-    args '-a', 'stop', '-p', "${projectDir}/../../", '-m', 'deps/mock-config'
-}
+//task('mockStart', type: Exec){
+//    doFirst {
+//        println "MOCK: Start server ..."
+//    }
+//    executable "../../scripts/_mock.sh"
+//    args '-a', 'start', '-p', "${projectDir}/../../", '-m', 'deps/mock-config'
+//}
+//
+//task('mockStop', type: Exec){
+//    doFirst {
+//        println "MOCK: Stop Server ..."
+//    }
+//    executable "../../scripts/_mock.sh"
+//    args '-a', 'stop', '-p', "${projectDir}/../../", '-m', 'deps/mock-config'
+//}
 
 gradle.projectsEvaluated {
     connectedDebugAndroidTest.dependsOn mockStart
