@@ -39,10 +39,10 @@ android {
 //    args '-a', 'stop', '-p', "${projectDir}/../../", '-m', 'deps/mock-config'
 //}
 
-gradle.projectsEvaluated {
-    connectedDebugAndroidTest.dependsOn mockStart
-    connectedDebugAndroidTest.finalizedBy mockStop
-}
+//gradle.projectsEvaluated {
+//    connectedDebugAndroidTest.dependsOn mockStart
+//    connectedDebugAndroidTest.finalizedBy mockStop
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
